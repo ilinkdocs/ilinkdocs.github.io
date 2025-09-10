@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:feap.gov.pt:CIUS-PT:2.1.2</cbc:CustomizationID>
+	<cbc:ID>01568c</cbc:ID>
+	<cbc:IssueDate>2021-06-30</cbc:IssueDate>
+	<cbc:DueDate>2022-06-16</cbc:DueDate>
+	<cbc:InvoiceTypeCode>FT</cbc:InvoiceTypeCode>
+	<cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="9946">PT589309340</cbc:EndpointID>
+			<cac:PartyName>
+				<cbc:Name>Entidade t2 cliente</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>RUA 123</cbc:StreetName>
+				<cbc:CityName>Viana do Castelo</cbc:CityName>
+				<cbc:PostalZone>1234-321</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>PT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID>PT589309340</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Entidade t2 cliente</cbc:RegistrationName>
+				<cbc:CompanyID>PT589309340</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Telephone>123456789</cbc:Telephone>
+				<cbc:ElectronicMail>gujora@getnada.com</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="9946">PT500000379</cbc:EndpointID>
+			<cac:PartyName>
+				<cbc:Name>Andreia Sousa e Filhos Lda</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Rua da carne azeda</cbc:StreetName>
+				<cbc:CityName>Funchal</cbc:CityName>
+				<cbc:PostalZone>9050-330</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>PT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID>PT500000379</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Andreia Sousa e Filhos Lda</cbc:RegistrationName>
+				<cbc:CompanyID>PT500000379</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Telephone>968826819</cbc:Telephone>
+				<cbc:ElectronicMail>alexandre.gouveia@acin.pt</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:Delivery>
+		<cac:DeliveryLocation>
+			<cac:Address>
+				<cbc:StreetName>Morada</cbc:StreetName>
+				<cbc:CityName>localidade</cbc:CityName>
+				<cbc:PostalZone>7000-222</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>PT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:DeliveryLocation>
+	</cac:Delivery>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="EUR">1.84</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="EUR">8.00</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="EUR">1.84</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID>NOR</cbc:ID>
+				<cbc:Percent>23.00</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="EUR">8.00</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="EUR">8.00</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">9.84</cbc:TaxInclusiveAmount>
+		<cbc:AllowanceTotalAmount currencyID="EUR">0.00</cbc:AllowanceTotalAmount>
+		<cbc:ChargeTotalAmount currencyID="EUR">0.00</cbc:ChargeTotalAmount>
+		<cbc:PrepaidAmount currencyID="EUR">0.00</cbc:PrepaidAmount>
+		<cbc:PayableRoundingAmount currencyID="EUR">0.00</cbc:PayableRoundingAmount>
+		<cbc:PayableAmount currencyID="EUR">9.84</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="C62">2.000</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">8.00000000</cbc:LineExtensionAmount>
+		<cac:Item>
+			<cbc:Name>Artigo xpto</cbc:Name>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>NOR</cbc:ID>
+				<cbc:Percent>23.00</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">4.00000000</cbc:PriceAmount>
+			<cbc:BaseQuantity unitCode="C62">1.000</cbc:BaseQuantity>
+			<cac:AllowanceCharge>
+				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+				<cbc:Amount currencyID="EUR">6.00</cbc:Amount>
+				<cbc:BaseAmount currencyID="EUR">10.00</cbc:BaseAmount>
+			</cac:AllowanceCharge>
+		</cac:Price>
+	</cac:InvoiceLine>
+</Invoice>
