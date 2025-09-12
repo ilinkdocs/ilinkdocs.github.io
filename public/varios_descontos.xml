@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<cbc:CustomizationID>urn:cen.eu:en16931:2017#compliant#urn:feap.gov.pt:CIUS-PT:2.1.2</cbc:CustomizationID>
+	<cbc:ID>11aa4a</cbc:ID>
+	<cbc:IssueDate>2021-07-15</cbc:IssueDate>
+	<cbc:DueDate>2021-07-29</cbc:DueDate>
+	<cbc:InvoiceTypeCode>FT</cbc:InvoiceTypeCode>
+	<cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="9946">PT206405570</cbc:EndpointID>
+			<cac:PartyName>
+				<cbc:Name>Fornecedor T2</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>aaaaaa</cbc:StreetName>
+				<cbc:CityName>aaaaaaa</cbc:CityName>
+				<cbc:PostalZone>1234-321</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>PT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID>PT206405570</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Fornecedor T2</cbc:RegistrationName>
+				<cbc:CompanyID>PT206405570</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Telephone>123456789</cbc:Telephone>
+				<cbc:ElectronicMail>magycot@getnada.com</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="9946">PT264051181</cbc:EndpointID>
+			<cac:PartyName>
+				<cbc:Name>Ent T2</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Desconhecido</cbc:StreetName>
+				<cbc:CityName>Desconhecido</cbc:CityName>
+				<cbc:PostalZone>0000-000</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>PT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<cbc:CompanyID>PT264051181</cbc:CompanyID>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Ent T2</cbc:RegistrationName>
+				<cbc:CompanyID>PT264051181</cbc:CompanyID>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Telephone>123456789</cbc:Telephone>
+				<cbc:ElectronicMail>gibyry@getnada.com</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:Delivery>
+		<cac:DeliveryLocation>
+			<cac:Address>
+				<cbc:StreetName>Desconhecido</cbc:StreetName>
+				<cbc:CityName>Desconhecido</cbc:CityName>
+				<cbc:PostalZone>0000-000</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>PT</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:DeliveryLocation>
+	</cac:Delivery>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="EUR">1.10</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="EUR">4.80</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="EUR">1.10</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID>NOR</cbc:ID>
+				<cbc:Percent>23.00</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="EUR">4.80</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="EUR">4.80</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">5.90</cbc:TaxInclusiveAmount>
+		<cbc:AllowanceTotalAmount currencyID="EUR">0.00</cbc:AllowanceTotalAmount>
+		<cbc:ChargeTotalAmount currencyID="EUR">0.00</cbc:ChargeTotalAmount>
+		<cbc:PrepaidAmount currencyID="EUR">0.00</cbc:PrepaidAmount>
+		<cbc:PayableRoundingAmount currencyID="EUR">0.00</cbc:PayableRoundingAmount>
+		<cbc:PayableAmount currencyID="EUR">5.90</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="C62">1.000</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">4.80000000</cbc:LineExtensionAmount>
+		<cac:AllowanceCharge>
+			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+			<cbc:AllowanceChargeReason>desconto 1</cbc:AllowanceChargeReason>
+			<cbc:Amount currencyID="EUR">1.00</cbc:Amount>
+		</cac:AllowanceCharge>
+		<cac:AllowanceCharge>
+			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+			<cbc:AllowanceChargeReason>desconto 2</cbc:AllowanceChargeReason>
+			<cbc:Amount currencyID="EUR">1.20</cbc:Amount>
+		</cac:AllowanceCharge>
+		<cac:AllowanceCharge>
+			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+			<cbc:AllowanceChargeReason>desconto 3</cbc:AllowanceChargeReason>
+			<cbc:Amount currencyID="EUR">3.00</cbc:Amount>
+		</cac:AllowanceCharge>
+		<cac:Item>
+			<cbc:Name>45666</cbc:Name>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>NOR</cbc:ID>
+				<cbc:Percent>23.00</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">10.00000000</cbc:PriceAmount>
+			<cbc:BaseQuantity unitCode="C62">1.000</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+</Invoice>
