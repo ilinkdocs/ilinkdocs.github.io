@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkilink=self.webpackChunkilink||[]).push([[617],{8648:(e,n,s)=>{s.r(n),s.d(n,{default:()=>k});s(6540);var u=s(6347),i=s(4848);function k(){return(0,i.jsx)(u.rd,{to:"/docs"})}}}]);

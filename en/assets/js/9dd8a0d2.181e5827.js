@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkilink=self.webpackChunkilink||[]).push([[617],{8648:(n,c,e)=>{e.r(c),e.d(c,{default:()=>u});e(6540);var s=e(6347),t=e(4586),r=e(4848);function u(){const{i18n:n}=(0,t.A)(),{currentLocale:c}=n;return(0,r.jsx)(s.rd,{to:"pt"!==c?`/${c}/docs`:"/docs"})}}}]);
