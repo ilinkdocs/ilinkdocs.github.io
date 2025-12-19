@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">Introdução ao API REST v1 | ilink Knowledge Base</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/docs/integrations/api/scope"><meta data-rh="true" property="og:locale" content="ptPT"><meta data-rh="true" property="og:locale:alternate" content="enGB"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Introdução ao API REST v1 | ilink Knowledge Base"><meta data-rh="true" name="description" content="Âmbito"><meta data-rh="true" property="og:description" content="Âmbito"><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/docs/integrations/api/scope"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/integrations/api/scope" hreflang="ptPT"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/en/docs/integrations/api/scope" hreflang="enGB"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/integrations/api/scope" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Introdução ao API REST v1","item":"https://your-docusaurus-site.example.com/docs/integrations/api/scope"}]}</script><link rel="stylesheet" href="/assets/css/styles.c09e8c32.css">
-<script src="/assets/js/runtime~main.a08a2aa3.js" defer="defer"></script>
-<script src="/assets/js/main.4ac276d9.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.3f9e2f35.js" defer="defer"></script>
+<script src="/assets/js/main.9f762443.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
@@ -19,13 +19,13 @@
 <p>Para integrar através do API, é necessário contactar primeiro a nossa equipa (<strong><a href="mailto:apoio@ilink.pt" target="_blank" rel="noopener noreferrer">apoio@ilink.pt</a></strong>) para solicitar acessos ao ambiente de testes/qualidade.</p>
 <p>Os acessos disponibilizados incluem:</p>
 <ul>
-<li>Um <strong>token de plataforma</strong>, que identifica o sistema/plataforma que acede ao webservice</li>
+<li>Um par de chaves de plataforma <strong>client id</strong> e <strong>client secret</strong>, que identifica o sistema/plataforma que acede ao webservice</li>
 <li>Uma <strong>chave pública</strong>, que identifica o cliente/NIF que pretende aceder ao webservice</li>
 </ul>
-<p>Isto significa que <strong>cada cliente que pretende emitir ou receber documentos necessita de um pré-registo junto da nossa equipa, para que seja gerada a sua chave pública</strong>. O token de plataforma é único para o sistema a integrar (comum a todos os clientes que utilizam o seu sistema) e deve ser usado em todas as chamadas ao API.</p>
+<p>Isto significa que <strong>cada cliente que pretende emitir ou receber documentos necessita de um pré-registo junto da nossa equipa, para que seja gerada a sua chave pública</strong>. As chaves de plataforma são únicas para o sistema a integrar (comum a todos os clientes que utilizam o seu sistema).</p>
 <p>Nos acessos de teste, são também disponibilizados 2 clientes/NIFs, juntamente com as respetivas credenciais de acesso ao portal do ilink. Deve usar estas entidades para efetuar transações de documentos entre si e, opcionalmente, aceder ao portal para consulta dos mesmos. Os NIFs atribuídos podem ser alterados se necessário.</p>
 <blockquote>
-<p><strong>Nota</strong>: Serão fornecidos novos acessos (token de plataforma e chave pública por NIF) aquando da entrada em produção.</p>
+<p><strong>Nota</strong>: Serão fornecidos novos acessos (chaves de plataforma e chave pública por NIF) aquando da entrada em produção.</p>
 </blockquote>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="notas-técnicas">Notas técnicas<a href="#notas-técnicas" class="hash-link" aria-label="Link direto para Notas técnicas" title="Link direto para Notas técnicas">​</a></h2>
 <ul>
@@ -35,6 +35,7 @@
 <li>As respostas (payloads) são devolvidas em formato <strong>JSON</strong></li>
 <li>Os servidores do ilink funcionam exclusivamente através de <strong>HTTPS, com versão TLS 1.2</strong> (em caso de problemas de comunicação, consulte possíveis soluções para <a href="https://www.google.com/search?q=enable%20tls%201.2%20java&amp;oq=enable%20tls%201.2%20java&amp;aqs=chrome..69i57j0i19i395l4j0i19i22i30l5.5771j1j7&amp;sourceid=chrome&amp;ie=UTF-8" target="_blank" rel="noopener noreferrer">Java</a> e <a href="https://www.google.com/search?q=enable%20tls%201.2%20c#&amp;sxsrf=ALeKk00pvMlLTAafzUGlqvul3udFWBE-Xw:1622739135091&amp;ei=vwi5YLeWBYmIlwTJyT8&amp;oq=enable%20tls%201.2%20c#&amp;gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEMsBMgYIABAWEB4yBggAEBYQHjoHCCMQsAMQJzoHCAAQRxCwAzoCCABQgaQFWKinBWC5qQVoA3ACeACAAXiIAb4CkgEDMS4ymAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&amp;sclient=gws-wiz&amp;ved=0ahUKEwj38dat9vvwAhUJxIUKHcnkDwAQ4dUDCBE&amp;uact=5" target="_blank" rel="noopener noreferrer">C#</a>)</li>
 <li>A especificação e cliente de demonstração swagger está disponível <a href="https://ilink.acin.pt/swagger-ui/dist/index.html" target="_blank" rel="noopener noreferrer">aqui</a></li>
+<li>A autenticação perante a API utiliza o fluxo <a href="https://oauth.net/2/grant-types/client-credentials/" target="_blank" rel="noopener noreferrer">OAuth2 Client Credentials</a></li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="ambientes-e-considerações-importantes">Ambientes e considerações importantes<a href="#ambientes-e-considerações-importantes" class="hash-link" aria-label="Link direto para Ambientes e considerações importantes" title="Link direto para Ambientes e considerações importantes">​</a></h2>
 <ul>
