@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">Receiving documents | ilink Knowledge Base</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/en/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/en/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/en/docs/integrations/api/received"><meta data-rh="true" property="og:locale" content="enGB"><meta data-rh="true" property="og:locale:alternate" content="ptPT"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Receiving documents | ilink Knowledge Base"><meta data-rh="true" name="description" content="Scope"><meta data-rh="true" property="og:description" content="Scope"><link data-rh="true" rel="icon" href="/en/img/favicon.png"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/en/docs/integrations/api/received"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/integrations/api/received" hreflang="ptPT"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/en/docs/integrations/api/received" hreflang="enGB"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/integrations/api/received" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Receiving documents","item":"https://your-docusaurus-site.example.com/en/docs/integrations/api/received"}]}</script><link rel="stylesheet" href="/en/assets/css/styles.c09e8c32.css">
-<script src="/en/assets/js/runtime~main.ea72e5c8.js" defer="defer"></script>
-<script src="/en/assets/js/main.2f880636.js" defer="defer"></script>
+<script src="/en/assets/js/runtime~main.fbec188a.js" defer="defer"></script>
+<script src="/en/assets/js/main.cd15d989.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
@@ -21,7 +21,7 @@
 <li><strong>Acceptance state management</strong>: Communicate the acceptance status of the document, including detailed messages in case of error or rejection</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="receiving-methods">Receiving methods<a href="#receiving-methods" class="hash-link" aria-label="Direct link to Receiving methods" title="Direct link to Receiving methods">​</a></h2>
-<p>Allows you to view and integrate documents into the system. Receiving can be made in two ways: <strong>Manual document viewing</strong> or <strong>Incoming webhook</strong>.</p>
+<p>This integration allows you to view and integrate documents into the system. Receiving can be done in two ways: <strong>Manual document consultation</strong> or <strong>Incoming webhook</strong>.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="manual-document-consultation">Manual document consultation<a href="#manual-document-consultation" class="hash-link" aria-label="Direct link to Manual document consultation" title="Direct link to Manual document consultation">​</a></h3>
 <p>In this mode, you must access the endpoint <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/getDocuments" target="_blank" rel="noopener noreferrer">GET /apps/documents</a></strong>. You can specify search parameters to filter the results. The response includes the main data from the documents and pagination information through the properties <code>rows</code> (number of elements per page) and <code>page</code> (page number).</p>
 <p>To view the details of a document and access the XML and PDF files, use the <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/getDocument" target="_blank" rel="noopener noreferrer">GET /apps/documents/{id}</a></strong> method, using one of the <code>id</code>s obtained in the previous list.</p>
@@ -33,40 +33,40 @@
 <p><strong>Important:</strong> Excessive use of this endpoint should be avoided. Too many calls may result in timeouts or access restrictions, in accordance with the interoperability agreement.</p>
 </blockquote>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="incoming-webhook-recommended">Incoming webhook (recommended)<a href="#incoming-webhook-recommended" class="hash-link" aria-label="Direct link to Incoming webhook (recommended)" title="Direct link to Incoming webhook (recommended)">​</a></h3>
-<p>Neste modo, o ilink notifica o ERP sempre que chega um novo documento, dispensando consultas frequentes ao endpoint <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/getDocuments" target="_blank" rel="noopener noreferrer">GET /apps/documents</a></strong>. Para mais informação, ver a secção <a href="/en/docs/integrations/webhooks/intro">Webhooks</a>.</p>
+<p>In this mode, ilink notifies the ERP whenever a new document arrives, eliminating the need for frequent polling of the <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/getDocuments" target="_blank" rel="noopener noreferrer">GET /apps/documents</a></strong> endpoint. For more information, see the <a href="/en/docs/integrations/webhooks/intro">Webhooks</a> section.</p>
 <blockquote>
 <p><strong>Note:</strong> Document data is sent in a structured format, including public URLs for accessing the XML and PDF files.</p>
 </blockquote>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="importação-e-aceitação">Import and acceptance<a href="#importação-e-aceitação" class="hash-link" aria-label="Direct link to Import and acceptance" title="Direct link to Import and acceptance">​</a></h2>
-<p>After retrieving the document, the ERP must inform iLink of the processing status, i.e. whether it was successfully integrated or requires corrections. Two steps are required:</p>
+<p>After retrieving the document, the ERP must inform ilink of the processing status, i.e. whether it was successfully integrated or requires corrections. Two actions are required:</p>
 <ul>
 <li>
-<p><strong>1. Communicate the document state</strong></p>
+<p><strong>Communicate the document import</strong></p>
 <ul>
-<li>Done via <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/postDocumentsAccepted" target="_blank" rel="noopener noreferrer">POST /apps/documents/{id}/accepted</a></strong>, indicating whether the document was accepted or not and, in case of rejection, the reason</li>
+<li>The document import confirms that the document was effectively received in the client&#x27;s system, using the method <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/postDocuments" target="_blank" rel="noopener noreferrer">POST /apps/documents/{id}</a></strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Communicate the document state</strong></p>
+<ul>
+<li>Via <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/postDocumentsAccepted" target="_blank" rel="noopener noreferrer">POST /apps/documents/{id}/accepted</a></strong>, indicate whether the document was accepted or not and, in case of rejection, the reason</li>
 <li>A rejection reason must be provided if the document is not accepted</li>
 <li>A rejected document may be resent by the issuer with corrected data</li>
 </ul>
 </li>
-<li>
-<p><strong>2. Communicate the document import (only if accepted)</strong></p>
-<ul>
-<li>If the previous step indicated acceptance, the method <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/postDocuments" target="_blank" rel="noopener noreferrer">POST /apps/documents/{id}</a></strong> must be called</li>
-</ul>
-</li>
 </ul>
 <blockquote>
-<p><strong>Note:</strong> Rejected documents must not be imported.</p>
+<p><strong>Note:</strong> Although the order of the above actions is flexible, rejected documents must not be imported.</p>
 </blockquote>
-<p>Correct communication of accepted/imported documents ensures an audit trail and facilitates API consumption. If manual consultation is being used, documents already rejected or imported will not be returned in future calls. <strong>In other words, the endpoint <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/getDocuments" target="_blank" rel="noopener noreferrer">GET /apps/documents</a></strong> does not return documents that have previously been rejected or imported</strong>.</p>
-<p>The image below shows how the operations performed by the ERP are recorded in the iLink portal:</p>
+<p>Correct communication of accepted/imported documents ensures an audit trail and facilitates API consumption. If manual consultation is being used, documents already rejected or imported will not be returned in future calls. In other words, the endpoint <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/getDocuments" target="_blank" rel="noopener noreferrer">GET /apps/documents</a></strong> does not return documents that have previously been rejected or imported.</p>
+<p>The image below shows how the operations performed by the ERP are recorded in the ilink portal:</p>
 <p><img decoding="async" loading="lazy" alt="img info" src="/en/assets/images/20230426-125316-0840655190d4733e042ef2069dda297b.png" width="1468" height="500" class="img_ev3q"></p>
 <p>Proper use of document import also generates queryable information for the document issuer, confirming its integration with the recipient’s system.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="process-states-optional">Process States (optional)<a href="#process-states-optional" class="hash-link" aria-label="Direct link to Process States (optional)" title="Direct link to Process States (optional)">​</a></h2>
 <blockquote>
 <p><strong>Note:</strong> Optional feature for information purposes only. It does not affect document reception.</p>
 </blockquote>
-<p>ilink allows the creation of custom document states. When enabled, it is possible to consult and modify a document’s state via API. This capability allows external systems (e.g. document management) to update the process state in an integrated way, and is useful for synchronising internal organisational processes across systems. All process state changes are recorded in the document’s history.</p>
+<p>ilink allows the creation of custom document states. When this feature is enabled, it is possible to consult and modify a document’s state via API. This capability allows external systems (e.g. document management) to update the process state in an integrated way, and is useful for synchronising internal organisational processes across systems. All process state changes are recorded in the document’s history.</p>
 <blockquote>
 <p><strong>Important:</strong> The process state is independent of the base state (received, accepted, etc.). It serves only for internal organisation and operational logging.</p>
 </blockquote>

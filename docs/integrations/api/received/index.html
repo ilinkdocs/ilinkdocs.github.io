@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.8.1">
 <title data-rh="true">Receção de documentos | ilink Knowledge Base</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://your-docusaurus-site.example.com/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://your-docusaurus-site.example.com/docs/integrations/api/received"><meta data-rh="true" property="og:locale" content="ptPT"><meta data-rh="true" property="og:locale:alternate" content="enGB"><meta data-rh="true" name="docusaurus_locale" content="pt"><meta data-rh="true" name="docsearch:language" content="pt"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Receção de documentos | ilink Knowledge Base"><meta data-rh="true" name="description" content="Âmbito"><meta data-rh="true" property="og:description" content="Âmbito"><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://your-docusaurus-site.example.com/docs/integrations/api/received"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/integrations/api/received" hreflang="ptPT"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/en/docs/integrations/api/received" hreflang="enGB"><link data-rh="true" rel="alternate" href="https://your-docusaurus-site.example.com/docs/integrations/api/received" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Receção de documentos","item":"https://your-docusaurus-site.example.com/docs/integrations/api/received"}]}</script><link rel="stylesheet" href="/assets/css/styles.c09e8c32.css">
-<script src="/assets/js/runtime~main.b1705fff.js" defer="defer"></script>
-<script src="/assets/js/main.508b36cd.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.9e7af28f.js" defer="defer"></script>
+<script src="/assets/js/main.ef02f23b.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><defs>
@@ -21,7 +21,7 @@
 <li><strong>Gestão do estado de aceitação</strong>: Comunicar o estado de aceitação do documento, incluindo mensagens detalhadas em caso de erro ou rejeição</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="métodos-de-receção">Métodos de receção<a href="#métodos-de-receção" class="hash-link" aria-label="Link direto para Métodos de receção" title="Link direto para Métodos de receção">​</a></h2>
-<p>Permite consultar e integrar documentos no sistema. A receção pode ser feita de duas formas: <strong>Consulta manual de documentos</strong> ou <strong>Webhook de receção</strong>.</p>
+<p>Esta integração permite consultar e integrar documentos no sistema. A receção pode ser feita de duas formas: <strong>Consulta manual de documentos</strong> ou <strong>Webhook de receção</strong>.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="consulta-manual-de-documentos">Consulta manual de documentos<a href="#consulta-manual-de-documentos" class="hash-link" aria-label="Link direto para Consulta manual de documentos" title="Link direto para Consulta manual de documentos">​</a></h3>
 <p>Neste modo, é necessário aceder ao endpoint <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/getDocuments" target="_blank" rel="noopener noreferrer">GET /apps/documents</a></strong>. É possível indicar parâmetros de pesquisa para filtrar os resultados. A resposta inclui os dados principais dos documentos e informação de paginação através das propriedades <code>rows</code> (número de elementos por página) e <code>page</code> (número da página).</p>
 <p>Para consultar os detalhes de um documento e aceder aos ficheiros XML e PDF, deve ser usado o método <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/getDocument" target="_blank" rel="noopener noreferrer">GET /apps/documents/{id}</a></strong>, recorrendo a um dos <code>id</code>s obtidos na listagem anterior.</p>
@@ -38,35 +38,35 @@
 <p><strong>Nota:</strong> São enviados os dados dos documentos num formato estruturado, incluindo URLs de acesso aos anexos XML e PDF.</p>
 </blockquote>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="importação-e-aceitação">Importação e aceitação<a href="#importação-e-aceitação" class="hash-link" aria-label="Link direto para Importação e aceitação" title="Link direto para Importação e aceitação">​</a></h2>
-<p>Após consultar o documento, o ERP deve comunicar ao ilink o estado de processamento, ou seja, se foi integrado com sucesso ou se necessita de correções. São necessários 2 passos:</p>
+<p>Após consultar o documento, o ERP deve comunicar ao ilink o estado de processamento, ou seja, se foi integrado com sucesso ou se necessita de correções. Para tal, são necessárias duas ações:</p>
 <ul>
 <li>
-<p><strong>1. Comunicar o estado do documento</strong></p>
+<p><strong>Comunicar a importação do documento</strong></p>
 <ul>
-<li>Feito com <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/postDocumentsAccepted" target="_blank" rel="noopener noreferrer">POST /apps/documents/{id}/accepted</a></strong>, indicando se o documento foi aceite ou não e, em caso de rejeição, o motivo</li>
+<li>A importação do documento confirma que o documento efetivamente deu entrada no sistema do cliente usando o método <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/postDocuments" target="_blank" rel="noopener noreferrer">POST /apps/documents/{id}</a></strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Comunicar o estado do documento</strong></p>
+<ul>
+<li>Através do método <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/postDocumentsAccepted" target="_blank" rel="noopener noreferrer">POST /apps/documents/{id}/accepted</a></strong>, podemos indicar se o documento foi aceite ou não e, em caso de rejeição, o seu motivo</li>
 <li>É obrigatório indicar o motivo de rejeição se o documento não for aceite</li>
 <li>Um documento rejeitado pode ser reenviado pelo emissor com os dados corrigidos</li>
 </ul>
 </li>
-<li>
-<p><strong>2. Comunicar a importação do documento (apenas se aceite)</strong></p>
-<ul>
-<li>Se o passo anterior indicar aceitação, deve ser chamado o método <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/postDocuments" target="_blank" rel="noopener noreferrer">POST /apps/documents/{id}</a></strong></li>
-</ul>
-</li>
 </ul>
 <blockquote>
-<p><strong>Nota:</strong> Documentos rejeitados não devem ser importados.</p>
+<p><strong>Nota:</strong> Embora a ordem das ações acima seja livre, os documentos rejeitados não devem ser importados.</p>
 </blockquote>
-<p>A comunicação correta de documentos aceites/importados garante histórico de auditoria e facilita o consumo da API. Se estiver a ser usada a consulta manual, documentos já rejeitados ou importados não voltam a ser devolvidos em chamadas futuras. <strong>Ou seja, o endpoint <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/getDocuments" target="_blank" rel="noopener noreferrer">GET /apps/documents</a></strong> não devolve documentos previamente rejeitados ou importados</strong>.</p>
+<p>A comunicação correta de documentos aceites/importados garante histórico de auditoria e facilita o consumo da API. Se estiver a ser usada a consulta manual, documentos já rejeitados ou importados não voltam a ser devolvidos em chamadas futuras. Ou seja, o endpoint <strong><a href="https://ilink.acin.pt/swagger-ui/dist/index.html#/Documentos/getDocuments" target="_blank" rel="noopener noreferrer">GET /apps/documents</a></strong> não devolve documentos previamente rejeitados ou importados.</p>
 <p>A imagem abaixo mostra como as operações feitas pelo ERP ficam registadas no portal do ilink:</p>
 <p><img decoding="async" loading="lazy" alt="img info" src="/assets/images/20230426-125316-0840655190d4733e042ef2069dda297b.png" width="1468" height="500" class="img_ev3q"></p>
 <p>O uso correto da importação de documentos gera também uma informação consultável para o fornecedor do documento, ficando confirmada a sua integração com o sistema do recetor.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="estados-de-processo-opcional">Estados de Processo (opcional)<a href="#estados-de-processo-opcional" class="hash-link" aria-label="Link direto para Estados de Processo (opcional)" title="Link direto para Estados de Processo (opcional)">​</a></h2>
 <blockquote>
-<p><strong>Nota:</strong> Funcionalidade opcional e apenas informativa. Não interfere com a receção de documentos.</p>
+<p><strong>Nota:</strong> Funcionalidade opcional e meramente informativa. Não interfere com a receção de documentos.</p>
 </blockquote>
-<p>O ilink permite criar estados de documento personalizados. Quando ativa, é possível consultar e modificar o estado de um documento via API. Esta capacidade permite que sistemas externos (ex.: gestão documental) alterem o estado processual de forma integrada, e é útil para sincronizar processos internos da organização entre sistemas. Todas as alterações de estado de processo ficam registadas no histórico do documento.</p>
+<p>O ilink permite criar estados de documento personalizados. Quando esta funcionalidade está ativa, é possível consultar e modificar o estado de um documento via API. Esta capacidade permite que sistemas externos (ex.: gestão documental) alterem o estado processual de forma integrada, e é útil para sincronizar processos internos da organização entre sistemas. Todas as alterações de estado de processo ficam registadas no histórico do documento.</p>
 <blockquote>
 <p><strong>Importante:</strong> O estado de processo é independente do estado base (recebido, aceite, etc.). Serve apenas para organização interna e registo de operações.</p>
 </blockquote>
